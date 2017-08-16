@@ -9,7 +9,14 @@ describe('getProductById', () => {
 
   it('returns null with no data', () => expect(getProductById(null, 1)).toBe(null))
 
+  it('returns null with undefined products', () => expect(getProductById({}, 1)).toBe(null))
+
   it('returns an object with a good id', () => expect(typeof getProductById(DATA, 1)).toBe('object'))
 
-  it('return ')
+  it('return the correct result', () => {
+    const result = getProductById(DATA, 1)
+    expect(result.id).toBe(1)
+    expect(result.name).toBe('Amazing Book')
+    expect(result.price).toBe(30)
+  })
 })
