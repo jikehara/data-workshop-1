@@ -11,7 +11,7 @@ describe('getOrderInfo', () => {
 
   it('returns an array', () => expect(getOrderInfo(DATA)).toBeInstanceOf(Array))
 
-  it('returns 10 items', () => expect(getOrderInfo(DATA).length).toHaveLength(10))
+  it('returns 10 items', () => expect(getOrderInfo(DATA)).toHaveLength(10))
 
   it('returns objects in the array', () => getOrderInfo(DATA).forEach(u => expect(typeof u).toBe('object')))
 
