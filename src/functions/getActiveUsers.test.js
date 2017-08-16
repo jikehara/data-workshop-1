@@ -5,13 +5,13 @@ import getActiveUsers from './getActiveUsers'
 describe('getActiveUsers', () => {
   it('is a function', () => expect(typeof getActiveUsers).toBe('function'))
 
-  it('returns null with no data', () => expect(getActiveUsers(null)).toBe(null))
+  it('returns null with no data', () => expect(getActiveUsers(null)).toBeNull())
 
-  it('returns null with undefined users', () => expect(getActiveUsers({})).toBe(null))
+  it('returns null with undefined users', () => expect(getActiveUsers({})).toBeNull())
 
-  it('returns an array', () => expect(getActiveUsers(DATA) instanceof Array).toBe(true))
+  it('returns an array', () => expect(getActiveUsers(DATA)).toBeInstanceOf(Array))
 
-  it('returns 3 items', () => expect(getActiveUsers(DATA).length).toBe(3))
+  it('returns 3 items', () => expect(getActiveUsers(DATA)).toHaveLength(3))
 
   it('returns objects in the array', () => getActiveUsers(DATA).forEach(u => expect(typeof u).toBe('object')))
 
