@@ -17,7 +17,7 @@ describe('getOrderInfo', () => {
 
   it(
     'returns objects that have the correct keys',
-    () => getOrderInfo(DATA).forEach(oi => expect(oi).toBe(expect.objectContaining({
+    () => getOrderInfo(DATA).forEach(oi => expect(oi).toEqual(expect.objectContaining({
       userName: expect.any(String),
       orderId: expect.any(Number),
       price: expect.any(Number)
