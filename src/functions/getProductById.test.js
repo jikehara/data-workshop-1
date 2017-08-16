@@ -11,7 +11,7 @@ describe('getProductById', () => {
 
   it('returns null with undefined products', () => expect(getProductById({}, 1)).toBe(null))
 
-  it('returns an object with a good id', () => expect(typeof getProductById(DATA, 1)).toBe('object'))
+  it('returns an object when passed a good id', () => expect(typeof getProductById(DATA, 1)).toBe('object'))
 
   it('return the correct result', () => {
     const result = getProductById(DATA, 1)

@@ -11,7 +11,7 @@ describe('getUserById', () => {
 
   it('returns null with undefined users', () => expect(getUserById({}, 1)).toBe(null))
 
-  it('returns an object with a good id', () => expect(typeof getUserById(DATA, 1)).toBe('object'))
+  it('returns an object when passed a good id', () => expect(typeof getUserById(DATA, 1)).toBe('object'))
 
   it('return the correct result', () => {
     const result = getUserById(DATA, 1)
