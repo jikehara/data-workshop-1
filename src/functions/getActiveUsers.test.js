@@ -15,6 +15,11 @@ describe('getActiveUsers', () => {
 
   it('returns objects in the array', () => getActiveUsers(DATA).forEach(u => expect(typeof u).toBe('object')))
 
+  it(
+    'returns objects that have accountActive = true',
+    () => getActiveUsers(DATA).forEach(u => expect(u.accountActive).toBe(true))
+  )
+
   it('return the correct result', () => {
     const result = getActiveUsers(DATA)
     expect(result[0].name).toBe('Jane')
