@@ -1,5 +1,19 @@
-export default (data, id) => {
-  if (data == null || data.users == null || id == null) return null
+export default (data, userId) => {
+  if (userId == null) {
+    return null
+  }
 
-  return data.users.find(u => u.id === id)
+  if (data == null) {
+    return null
+  }
+
+  if (data.users == null) {
+    return null
+  }
+
+  for (let i = 0; i < data.users.length; i++) {
+    if (data.users[i].id === userId) {
+      return data.users[i]
+    }
+  }
 }
